@@ -20,6 +20,8 @@ export default function MyMultilineField(props) {
           rows={4}
           defaultValue="Default Value"
           variant="filled"
+          onChange={onChange}
+          value={value}
           placeholder={placeholder} />
         )}
         />

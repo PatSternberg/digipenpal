@@ -16,6 +16,8 @@ export default function MyTextField(props) {
           <TextField
             id="filled-basic"
             label={label}
+            onChange={onChange}
+            value={value}
             variant="filled"
             placeholder={placeholder} />
         )}

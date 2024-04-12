@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import {Controller} from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 
 export default function MyDatePickerField(props) {
   const {label, name, control} = props
@@ -14,7 +14,11 @@ export default function MyDatePickerField(props) {
         render = {({
           field: {onChange, value},
         }) => (
-          <DatePicker label={label} />
+          <DatePicker
+            label={label}
+            onChange={onChange}
+            value={value}
+          />
         )}
         />
     </LocalizationProvider>

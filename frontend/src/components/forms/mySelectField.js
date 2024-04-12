@@ -27,15 +27,15 @@ export default function MySelectField(props) {
           <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
+          onChange={onChange}
+          value={value}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={'Open'}>Open</MenuItem>
+          <MenuItem value={'In progress'}>In progress</MenuItem>
+          <MenuItem value={'Completed'}>Completed</MenuItem>
         </Select>
         )}
         />

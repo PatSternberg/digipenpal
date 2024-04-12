@@ -1,43 +1,93 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
-// import MyDatePickerField from './forms/myDatePickerField'
+import { Box, Button, Typography } from '@mui/material'
+import MyDatePickerField from './forms/myDatePickerField'
 import MyTextField from './forms/myTextField'
-// import MySelectField from '.forms/mySelectField'
-// import MyMultilinetField from '.forms/myMultilineField'
+import MySelectField from './forms/mySelectField'
+import MyMultilineField from './forms/myMultilineField'
 import { useForm } from 'react-hook-form'
 
 
 
 
 function Create() {
+
   const {handleSubmit, reset, setValue, control} = useForm()
+  
+  function submission(data) {console.log(data)};
 
   return (
     <div>
-      <Box sx={{display:'flex', width:'100%', backgroundColor:'#00003f', marginBottom:'10px'}}>
+      <form onSubmit={handleSubmit(submission)}>
+        <Box sx={{display:'flex', width:'100%', backgroundColor:'#00003f', marginBottom:'10px'}}>
 
-        <Typography sx={{marginLeft:'20px', color:'#fff'}}>
-          Create records
-        </Typography>
+          <Typography sx={{marginLeft:'20px', color:'#fff'}}>
+            Create records
+          </Typography>
 
-      </Box>
-
-      <Box sx={{display:'flex', widht:'100%', boxShadow:3, padding:4, flexDirection:'column'}}>
-
-        <Box>
-          <MyTextField
-          label='Name'
-          name='name'
-          control={control}
-          placeholder='Provide a project name'>
-          </MyTextField>
         </Box>
 
-        <Box>
+        <Box sx={{display:'flex', widht:'100%', boxShadow:3, padding:4, flexDirection:'column'}}>
+
+          <Box>
+            <MyTextField
+            label='Name'
+            name='name'
+            control={control}
+            placeholder='Provide a project name'
+            width={'30%'}>
+            </MyTextField>
+          </Box>
+
+          <Box>
+            <MyDatePickerField
+            label='Start date'
+            name='start_date'
+            control={control}
+            width={'30%'}>
+            </MyDatePickerField>
+          </Box>
+
+          <Box>
+            <MyDatePickerField
+            label='End date'
+            name='end_date'
+            control={control}
+            width={'30%'}>
+            </MyDatePickerField>
+          </Box>
+
         </Box>
 
-      </Box>
+        <Box sx={{display:'flex', widht:'100%', boxShadow:3, padding:4, flexDirection:'column'}}>
 
+          <Box>
+            <MyMultilineField
+            label='Comments'
+            name='comments'
+            control={control}
+            placeholder='Provide a project name'
+            width={'30%'}>
+            </MyMultilineField>
+          </Box>
+
+          <Box>
+            <MySelectField
+            label='Status'
+            name='status'
+            control={control}
+            width={'30%'}>
+            </MySelectField>
+          </Box>
+
+          <Box width={'30%'}>
+            <Button variant='contained' type='submit' sx={{width: '100%'}}>
+              Submit
+
+            </Button>
+          </Box>
+
+        </Box>
+      </form>
     </div>
   )
 }

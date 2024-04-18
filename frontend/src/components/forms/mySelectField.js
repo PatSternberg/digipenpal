@@ -6,11 +6,11 @@ import Select from '@mui/material/Select';
 import {Controller} from 'react-hook-form';
 
 export default function MySelectField(props) {
-  const [age, setAge] = React.useState('');
+  // const [age, setAge] = React.useState('');
   const {label, name, control} = props
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
 
   return (
 

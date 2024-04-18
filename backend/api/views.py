@@ -27,7 +27,6 @@ class ProjectViewset(viewsets.ViewSet):
         else:
             return Response(serializer.errors, status=400)
 
-
     def retrieve(self, request, pk=None):
         project = self.queryset.get(pk=pk)
         serializer = self.serializer_class(project)

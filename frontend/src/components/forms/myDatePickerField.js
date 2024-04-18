@@ -6,6 +6,7 @@ import { Controller } from 'react-hook-form';
 
 export default function MyDatePickerField(props) {
   const {label, name, control} = props
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Controller
@@ -17,7 +18,7 @@ export default function MyDatePickerField(props) {
           <DatePicker
             label={label}
             onChange={onChange}
-            value={value}
+            value={value || null}
           />
         )}
         />

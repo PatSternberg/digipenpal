@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Create from './components/Create';
 import Navbar from './components/Navbar';
+import Delete from './components/Delete';
 
 function App() {
   const myWidth = 200
@@ -16,6 +17,7 @@ function App() {
             <Route path='' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/create' element={<Create />} />
+            <Route path='/delete/:id' element={<Delete />} />
           </Routes>
         }
       />

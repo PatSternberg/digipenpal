@@ -1,12 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import { Box, Button, Typography } from '@mui/material'
-import MyDatePickerField from './forms/myDatePickerField'
-import MyTextField from './forms/myTextField'
-import MySelectField from './forms/mySelectField'
-import MyMultilineField from './forms/myMultilineField'
-import { useForm } from 'react-hook-form'
 import AxiosInstance from './Axios';
-import Dayjs from 'dayjs';
 import { useNavigate, useParams } from 'react-router-dom'
 
 function Delete() {
@@ -30,14 +24,12 @@ function Delete() {
     GetData();
   },[])
 
-  
   function submission(data) {
     AxiosInstance.delete( `project/${MyId}/`,{
     }).then((res) => {
       navigate('/')
     })
   }
-
 
   return (
     <div>

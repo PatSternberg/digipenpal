@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import MyDatePickerField from './forms/myDatePickerField'
-import MyTextField from './forms/myTextField'
+import SimpleTextField from './forms/TextField'
 import MySelectField from './forms/mySelectField'
-import MyMultilineField from './forms/myMultilineField'
+import MultilineField from './forms/MultilineField'
 import { useForm } from 'react-hook-form'
 import AxiosInstance from './Axios';
 import Dayjs from 'dayjs';
@@ -36,79 +36,61 @@ function Create() {
     })
   }
 
-
   return (
     <div>
       <form onSubmit={handleSubmit(submission)}>
-        <Box sx={{display:'flex', width:'100%', backgroundColor:'#00003f', marginBottom:'10px'}}>
+        <div>
+          <h1>
+            Send a new message
+          </h1>
+        </div>
 
-          <Typography sx={{marginLeft:'20px', color:'#fff'}}>
-            Create records
-          </Typography>
+        <div className='messageConstructor'>
 
-        </Box>
-
-        <Box sx={{display:'flex', widht:'100%', boxShadow:3, padding:4, flexDirection:'column'}}>
-
-          <Box>
-            <MyTextField
-            label='Name'
+          <div className='column1'>    
+            <SimpleTextField
+            label='Subject'
             name='name'
             control={control}
-            placeholder='Provide a project name'
-            width={'30%'}>
-            </MyTextField>
-          </Box>
+            placeholder='Provide a project name'>
+            </SimpleTextField>
 
-          <Box>
             <MyDatePickerField
             label='Start date'
             name='start_date'
-            control={control}
-            width={'30%'}>
+            control={control}>
             </MyDatePickerField>
-          </Box>
 
-          <Box>
             <MyDatePickerField
             label='End date'
             name='end_date'
-            control={control}
-            width={'30%'}>
+            control={control}>
             </MyDatePickerField>
-          </Box>
+          </div>  
 
-        </Box>
-
-        <Box sx={{display:'flex', widht:'100%', boxShadow:3, padding:4, flexDirection:'column'}}>
-
-          <Box>
-            <MyMultilineField
-            label='Comments'
+          <div className='column2'>    
+            <MultilineField
+            label='Message content'
             name='comments'
             control={control}
-            placeholder='Provide a project name'
-            width={'30%'}>
-            </MyMultilineField>
-          </Box>
+            placeholder='Provide a project name'>
+            </MultilineField>
 
-          <Box>
             <MySelectField
             label='Status'
             name='status'
-            control={control}
-            width={'30%'}>
+            control={control}>
             </MySelectField>
-          </Box>
 
-          <Box width={'30%'}>
-            <Button variant='contained' type='submit' sx={{width: '100%'}}>
+            <Button variant='contained' type='submit'>
               Submit
-
             </Button>
-          </Box>
 
-        </Box>
+          </div>
+
+
+
+        </div>
       </form>
     </div>
   )

@@ -1,9 +1,9 @@
 import { React, useEffect } from 'react'
 import { Box, Button, Typography } from '@mui/material'
 import MyDatePickerField from './forms/myDatePickerField'
-import MyTextField from './forms/myTextField'
+import SimpleTextField from './forms/TextField'
 import MySelectField from './forms/mySelectField'
-import MyMultilineField from './forms/myMultilineField'
+import MultilineField from './forms/MultilineField'
 import { useForm } from 'react-hook-form'
 import AxiosInstance from './Axios';
 import Dayjs from 'dayjs';
@@ -69,13 +69,13 @@ function Edit() {
         <Box sx={{display:'flex', widht:'100%', boxShadow:3, padding:4, flexDirection:'column'}}>
 
           <Box>
-            <MyTextField
+            <SimpleTextField
             label='Name'
             name='name'
             control={control}
             placeholder='Provide a project name'
             width={'30%'}>
-            </MyTextField>
+            </SimpleTextField>
           </Box>
 
           <Box>
@@ -101,13 +101,13 @@ function Edit() {
         <Box sx={{display:'flex', widht:'100%', boxShadow:3, padding:4, flexDirection:'column'}}>
 
           <Box>
-            <MyMultilineField
+            <MultilineField
             label='Comments'
             name='comments'
             control={control}
             placeholder='Provide a project name'
             width={'30%'}>
-            </MyMultilineField>
+            </MultilineField>
           </Box>
 
           <Box>
